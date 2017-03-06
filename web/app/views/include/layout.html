@@ -1,0 +1,60 @@
+{config_load file='smarty.conf' scope='global'}
+{assign var="sitename" value="神行太保"}
+{block name="globalVar"}{/block}
+<!DOCTYPE html>
+<html>
+<head>
+<title>{block name="title"}{$sitename}{/block}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<link rel="shortcut icon" href="/favicon.ico" >
+<link rel="stylesheet" href="/css/alike.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+{block name="css"}{/block}
+{literal}
+<script type="text/javascript">
+var w = {};
+</script>
+{/literal}
+</head>
+<body>
+<div class="userid"></div>
+{if !$nohead}
+<div class="header">
+    {if !$noback}
+    <a class="back" href='javascript:history.go(-1);'><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    {/if}
+    <span class="title">{block name="titlebar"}神行太保{/block}</span>
+    {if !$nouser}
+    <span class="user"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+    {/if}
+    <div class="nav">
+        <a href="/website/all">我的任务</a>
+        <a href="/website/gain">付出回报</a>
+        <a href="/website/about">关于</a>
+        <a href="/website/logout">注销</a>
+    </div>
+</div>
+{/if}
+{block name="body"}{/block}
+</body>
+<script src="/js/zepto.js"></script>
+<script src="/js/zepto.cookie.js"></script>
+<script src="/js/header.js"></script>
+{block name="js"}{/block}
+{literal}
+<script type="text/javascript">
+$(document).ready(function()
+{
+    w.uid = $.fn.cookie('uid');
+    $('.userid').text(w.uid);
+});
+</script>
+{/literal}
+</html>
