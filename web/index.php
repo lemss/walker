@@ -17,20 +17,6 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-//判断正式机
-date_default_timezone_set('Asia/Shanghai');
-if (@$_SERVER["SITE_ENV"])
-{
-	define('ENVIRONMENT', $_SERVER["SITE_ENV"]);
-}
-elseif (isset($_SERVER["HTTP_HOST"]) && $_SERVER["HTTP_HOST"] == 'api.xin.com')
-{
-	define('ENVIRONMENT', 'production');
-}
-else
-{
-	define('ENVIRONMENT', 'testing');
-}
 
 /*
  *---------------------------------------------------------------
