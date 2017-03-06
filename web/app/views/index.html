@@ -1,0 +1,30 @@
+{extends file="include/layout.html"}
+{block name="globalVar"}
+    {assign var="noback" value="true"}
+{/block}
+{block name="title"}首页 - {$sitename}{/block}
+{block name="css"}
+<link rel="stylesheet" href="/css/index.css">
+{/block}
+{block name="titlebar"}
+    首页
+{/block}
+{block name="body"}
+    <div class="main">
+        {assign var="dl" value=""}
+        {foreach $data as $d}
+        {$dl=$d.deadline|date_format:"%Y-%m-%d"}
+        <a class="item{if $dl eq date('Y-m-d')} running{/if}" href="/website/detail?id={$d.task_id}">
+            <span class="item-col1">{$d.card_name}：</span>
+            <span class="item-col2"><b class="ok">{$d.distance}</b>步</span>
+            <span class="item-col3">({$dl})</span>
+        </a>
+        {/foreach}
+        <a href="/website/add" class="btn2">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            {if $data|count eq 0}
+            添加任务
+            {/if}
+        </a>
+    </div>
+{/block}

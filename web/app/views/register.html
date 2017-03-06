@@ -1,0 +1,104 @@
+{extends file="include/layout.html"}
+{block name="globalVar"}
+    {assign var="nouser" value="true"}
+    {assign var="noback" value="true"}
+{/block}
+{block name="title"}注册 - {$sitename}{/block}
+{block name="titlebar"}神行太保{/block}
+{block name="css"}
+<link rel="stylesheet" href="/css/register.css">
+{/block}
+{block name="body"}
+<div class="main">
+    <p class="login_title">注册</p>
+    <input type="text" id="txtname" name="txtname" maxlength="20" class="txt1" placeholder="请输入手机号"/>
+    <p class="error"></p>
+    <input type="password" id="txtpwd" name="txtpwd" class="txt1" maxlength="20" placeholder="请输入确认密码"/>
+    <p class="error"></p>
+    <input type="password" id="txtrepwd" name="txtrepwd" class="txt1" maxlength="20" placeholder="请输入密码"/>
+    <p class="error"></p>
+    <a class="btn2" href="javascript:;">注册</a>
+</div>
+{/block}
+{block name="js"}
+{literal}
+<script>
+$(document).ready(function()
+{
+    var loguid = $.fn.cookie('log-uid'),
+        logpwd = $.fn.cookie('log-pwd');
+    
+    $('#txtname').val(loguid);
+    $('#txtpwd').val(logpwd);
+    
+    $.fn.cookie('log-uid','');
+    $.fn.cookie('log-pwd','');
+
+    var sh = window.innerHeight,
+        h = $('.main').height();
+    mt = (sh - h) / 2;
+    $('.main').css('margin-top',mt+'px');
+
+    $('input').on('focus',function()
+    {
+        $(this).next().removeAttr('style');
+    });
+    $('.btn2').on('click',function(e)
+    {
+        var data = {};
+        var txt = $('#txtname');
+        var val = $.trim(txt.val());
+        if(val.length <= 0)
+        {
+            txt.next().text('请输入手机号！').css({'visibility':'visible'});
+            return false;
+        }
+        data.mobile = val;
+        
+        txt = $('#txtpwd');
+        val = $.trim(txt.val());
+        if(val.length <= 0)
+        {
+            txt.next().text('请输入密码！').css({'visibility':'visible'});
+            return false;
+        }
+        txt = $('#txtrepwd');
+        var val1 = $.trim(txt.val());
+        if(val1.length <= 0)
+        {
+            txt.next().text('请输入确认密码！').css({'visibility':'visible'});
+            return false;
+        }
+        if(val != val1)
+        {
+            txt.next().text('密码与确认密码不一致！').css({'visibility':'visible'});
+            return false;
+        }
+        data.password = val;
+        $.ajax(
+        {
+            url:'/user/register',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success:function(res)
+            {
+                if(res.code == '1')
+                {
+                    $.fn.cookie('uid', res.data.userid,{ expires : 7 });
+                    $.fn.cookie('token', res.data.token,{ expires : 7 });
+                    window.location.href = '/website/index';
+                }
+                else
+                {
+                    alert(res.message || '注册失败！');
+                }
+            }
+        });
+        
+    });
+});
+</script>
+{/literal}
+{/block}
+</html>

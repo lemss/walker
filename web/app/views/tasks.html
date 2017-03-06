@@ -1,0 +1,84 @@
+{extends file="include/layout.html"}
+{block name="title"}我的任务 - {$sitename}{/block}
+{block name="globalVar"}
+    {assign var="nouser" value="true"}
+{/block}
+{block name="css"}
+<link rel="stylesheet" href="/css/tasks.css">
+{/block}
+{block name="titlebar"}
+    我的任务
+{/block}
+{block name="body"}
+
+{assign var="dl" value=""}
+{if $todo|count > 0}
+<div class="item">
+    <p>
+        进行中的任务
+        <i class="fa fa-angle-double-down" aria-hiaen="true"></i>
+    </p>
+    
+    {foreach $todo as $d}
+    {$dl=$d.deadline|date_format:"%Y-%m-%d"}
+    <a href="/website/detail?id={$d.task_id}">
+        <span class="item-col1">{$d.card_name}：</span>
+        <span class="item-col2">{$d.distance}步</span>
+        <span class="item-col3">({$dl})</span>
+    </a>
+    {/foreach}
+</div>
+{/if}
+{if $expire|count > 0}
+<div class="item expire">
+    <p>
+        已完成的任务
+        <i class="fa fa-angle-double-down" aria-hiaen="true"></i>
+    </p>
+    <p class="total">
+        总运动里程：<b>{$expire.total_distance}</b>步
+    </p>
+    {foreach $expire.list as $d}
+    {$dl=$d.deadline|date_format:"%Y-%m-%d"}
+    <a href="/website/detail?id={$d.task_id}" >
+        <span class="item-col1">{$d.card_name}：</span>
+        <span class="item-col2">{$d.actual_distance}/{$d.distance}步</span>
+        <span class="item-col3">时间：{$dl}</span>
+    </a>
+    {/foreach}
+</div>
+{/if}
+{/block}
+{block name="js"}
+{literal}
+<script>
+$(document).ready(function()
+{
+    $('.item .fa').on('click',function()
+    {
+        var that = $(this),c1,c2;
+        if(this.className.indexOf('down') >= 0)
+        {
+            that.parent().siblings().hide();
+            //this.className = this.className.replace('down','up');
+            c1 = 'fa-angle-double-down';
+            c2 = 'fa-angle-double-up';
+        }
+        else
+        {
+            that.parent().siblings().show();
+            //this.className = this.className.replace('up','down');
+            c1 = 'fa-angle-double-up';
+            c2 = 'fa-angle-double-down';
+        }
+        that.removeClass('rotate');
+        setTimeout(function()
+        {
+            that.addClass('rotate');
+            that.removeClass(c1).addClass(c2);
+        },100);
+    });
+});
+</script>
+{/literal}
+{/block}

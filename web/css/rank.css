@@ -1,0 +1,251 @@
+body
+{
+    background-color:rgba(211,211,211,1);
+}
+.hd
+{
+    font-size:0.3rem;
+    text-align:center;
+    padding:0.2rem 0.2rem 0.2rem 1rem;
+    top: 1.8rem;
+    right: -2.4rem;
+    color:#8e8893;
+    position:absolute;
+    z-index:2;
+    background-color:#3d3744;
+    line-height:0.5rem;
+    border-radius:2rem 0 0 2rem;
+    
+    -webkit-transition: all .5s ease-in;  
+    -moz-transition: all .5s ease-in;  
+    transition: all .5s ease-in;  
+}
+.hd i
+{
+    font-size:0.5rem;
+    position:absolute;
+    top:0.4rem;
+    left:0;
+    color:#fefefe;
+}
+.hd span
+{
+    display:block;
+}
+.hd span + span
+{
+    border-top:1px solid #8e8893;
+}
+.hd .hd_sel
+{
+    color:#fefefe;
+}
+
+.in
+{
+    right:0;
+}
+
+.item
+{
+    position:absolute;
+    top:0.8rem;
+    width:96%;
+    padding:0.2rem 2%;
+    color:#3b2f2f;
+}
+.end
+{
+    left:-100%;
+    transition: left 0.5s;
+    -moz-transition: left 0.5s; /* Firefox 4 */
+    -webkit-transition:left  0.5s; /* Safari 和 Chrome */
+    -o-transition: left 0.5s; /* Opera */
+}
+.end.item_show
+{
+    left:0;
+}
+.will
+{
+    right:-100%;
+    transition: right 0.5s;
+    -moz-transition: right 0.5s; /* Firefox 4 */
+    -webkit-transition:right  0.5s; /* Safari 和 Chrome */
+    -o-transition: right 0.5s; /* Opera */
+}
+.will.item_show
+{
+    right:0;
+}
+.rankhead
+{
+    text-align:center;
+    display:flex;
+    background-color:#4d4654;
+    color:#ebe8ed;
+    padding:0.2rem 0;
+}
+
+.rankhead span
+{
+    flex:3;
+    font-size:0.3rem;
+    display:inline-block;
+}
+.rankhead span.item-col1
+{
+    flex:1;
+}
+.end>p
+{
+    display:flex;
+    text-align:center;
+    font-size:0.3rem;
+    border-bottom:1px solid #8e8893;
+    line-height:0.66rem;
+    position:relative;
+}
+.end>p>span:nth-of-type(2),
+.end>p>span:nth-of-type(3),
+.end>p>span:nth-of-type(4)
+{
+    flex:1;
+}
+.end>p .item-col1
+{
+    width:0.5rem;
+}
+
+.end>p.first
+{
+    /* color:#646359; */
+    font-size:0.36rem;
+    /* border-color:#feeb49; */
+}
+.end>p.first:before
+{
+    content:' ';
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background-color:rgba(254,235,49,0.2);
+}
+.end>p.first .item-col1
+{
+    /* color:#646359; */
+    /* background:url('/imgs/rank.png') center 0.06rem no-repeat; */
+}
+.end>p.first .item-col1:before 
+{
+    content:' ';
+    display:block;
+    position:absolute;
+    width:0.5rem;
+    height:0.5rem;
+    z-index:-1;
+    top:0.08rem;
+    left:0;
+    border-radius:0.5rem;
+    background-color:#feeb49;
+}
+
+.end>p.second
+{
+    /* color:#c6d7de; */
+    font-size:0.34rem;
+    /* border-color:#c6d7de; */
+}
+.end>p.second:before
+{
+    content:' ';
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background-color:rgba(176,189,195,1);
+}
+.end>p.second .item-col1
+{
+    position:relative;
+    /* color:c6d7de; */
+    /* background:url('/imgs/rank.png') center -1.59rem no-repeat; */
+}
+.end>p.second .item-col1:before 
+{
+    content:' ';
+    display:block;
+    position:absolute;
+    width:0.5rem;
+    height:0.5rem;
+    z-index:-1;
+    top:0.08rem;
+    left:0;
+    border-radius:0.5rem;
+    background-color:#c6d7de;
+}
+.end>p.third
+{
+    /* color:#fdc471; */
+    font-size:0.32rem;
+    /* border-color:#fdc471; */
+}
+.end>p.third:before
+{
+    content:' ';
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background-color:rgba(253,196,71,0.2);
+}
+.end>p.third .item-col1
+{
+    position:relative;
+    /* color:#fdc471; */
+    /* background:url('/imgs/rank.png') center  -3.25rem no-repeat; */
+}
+.end>p.third .item-col1:before 
+{
+    content:' ';
+    display:block;
+    position:absolute;
+    width:0.5rem;
+    height:0.5rem;
+    z-index:-1;
+    top:0.08rem;
+    left:0;
+    border-radius:0.5rem;
+    background-color:#fdc471;
+}
+
+.will>p
+{
+    display:flex;
+    text-align:center;
+    font-size:0.3rem;
+    border-bottom:1px solid #8e8893;
+    line-height:0.66rem;
+    position:relative;
+}
+.will>p>span
+{
+    flex:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,146 @@
+{extends file="include/layout.html"}
+{block name="title"}神行榜 - {$sitename}{/block}
+{block name="globalVar"}
+    {assign var="nouser" value="true"}
+    {assign var="noback" value="true"}
+{/block}
+{block name="css"}
+<link rel="stylesheet" href="/css/rank.css">
+{/block}
+{block name="titlebar"}
+    神行榜
+{/block}
+{block name="body"}
+<div class="hd">
+    <span class="hd_sel" data-name="end">今日完成排行</span>
+    <span data-name="will">今日挑战排行</span>
+    
+    <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+</div>
+<div class="item end item_show">
+    <div class="rankhead">
+        <span class="item-col1"></span>
+        <span>姓名</span>
+        <span>步数</span>
+        <span>追梦奖金</span>
+    </div>
+    <p class="first">
+        <span class="item-col1">1</span>
+        <span>路人甲</span>
+        <span>47312步</span>
+        <span>5500元</span>
+    </p>
+    <p class="second">
+        <span class="item-col1">2</span>
+        <span>小钻风</span>
+        <span>43521步</span>
+        <span>4400元</span>
+    </p>
+    <p class="third">
+        <span class="item-col1">3</span>
+        <span>孙悟空</span>
+        <span>33221步</span>
+        <span>3800元</span>
+    </p>
+    <p>
+        <span class="item-col1">4</span>
+        <span>黄袍怪</span>
+        <span>24332步</span>
+        <span>2900元</span>
+    </p>
+    <p>
+        <span class="item-col1">5</span>
+        <span>莱昂纳多</span>
+        <span>18791步</span>
+        <span>2400元</span>
+    </p>
+    <p>
+        <span class="item-col1">6</span>
+        <span>奥黛丽赫本</span>
+        <span>16535步</span>
+        <span>2800元</span>
+    </p>
+</div>
+<div class="item will" style="display:none">
+    <div class="rankhead">
+        <span>姓名</span>
+        <span>步数</span>
+        <span>追梦基金</span>
+    </div>
+    <p>
+        <span>戴琨</span>
+        <span>50000步</span>
+        <span>5000元</span>
+    </p>
+    <p>
+        <span>邱慧</span>
+        <span>40000步</span>
+        <span>4000元</span>
+    </p>
+    <p>
+        <span>崔阳</span>
+        <span>30000步</span>
+        <span>3000元</span>
+    </p>
+    <p>
+        <span>李国宾</span>
+        <span>20000步</span>
+        <span>2000元</span>
+    </p>
+    <p>
+        <span>卢文伟</span>
+        <span>10000步</span>
+        <span>1000元</span>
+    </p>
+    <p>
+        <span>戴宗</span>
+        <span>9999步</span>
+        <span>500元</span>
+    </p>
+</div>
+{/block}
+{block name="js"}
+{literal}
+<script>
+$(document).ready(function()
+{
+    $('.hd').on('click',function(e)
+    {
+        var that = $(e.target);
+        if(e.target.tagName == 'I')
+        {
+            var c1,c2;
+            if(e.target.className.indexOf('left') >= 0)
+            {
+                c1 = 'fa-hand-o-left';
+                c2 = 'fa-hand-o-right';
+                that.parent().addClass('in');
+            }
+            else
+            {
+                c1 = 'fa-hand-o-right';
+                c2 = 'fa-hand-o-left';
+                that.parent().removeClass('in');
+            }
+            setTimeout(function()
+            {
+                that.removeClass(c1).addClass(c2);
+            },500);
+            return;
+        }
+        
+        if(that.hasClass('hd_sel')) return;
+        that.addClass('hd_sel').siblings().removeClass('hd_sel');
+        
+        $('.' + that.data('name')).show().addClass('item_show');
+        $('.' + that.siblings().data('name')).removeClass('item_show');
+        
+        setTimeout(function()
+        {
+            $('.' + that.siblings().data('name')).hide();
+        },500);
+    });
+});
+</script>
+{/literal}
+{/block}

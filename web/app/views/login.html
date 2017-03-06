@@ -1,0 +1,96 @@
+{extends file="include/layout.html"}
+{block name="globalVar"}
+    {assign var="nouser" value="true" }
+    {assign var="noback" value="true"}
+{/block}
+{block name="title"}登录 - {$sitename}{/block}
+
+{block name="titlebar"}神行太保{/block}
+{block name="css"}
+<link rel="stylesheet" href="/css/login.css">
+{/block}
+{block name="body"}
+<div class="main">
+    <p class="login_title">登录</p>
+    <input type="number" id="txtname" maxlength="20" class="txt1" max="11" placeholder="请输入手机号"/>
+    <p class="error"></p>
+    <input type="password" id="txtpwd" class="txt1" maxlength="20" placeholder="请输入密码"/>
+    <p class="error"></p>
+    <a class="btn1" href="javascript:;" id="btnReg">注册</a>
+    <a class="btn1" href="javascript:;" id="btnSub">登录</a>
+</div>
+{/block}
+{block name="js"}
+{literal}
+<script>
+$(document).ready(function()
+{
+    var sh = window.innerHeight,
+        h = $('.main').height();
+    mt = (sh - h) / 2;
+    $('.main').css('margin-top',mt+'px');
+    
+    $('input').on('focus',function()
+    {
+        $(this).next().removeAttr('style');
+    });
+    $('#btnReg').on('click', function()
+    {
+        $.fn.cookie('log-uid',$.trim($('#txtname').val()));
+        $.fn.cookie('log-pwd',$.trim($('#txtpwd').val()));
+        window.location.href='/website/reg';
+    });
+    $('#btnSub').on('click',function(e)
+    {
+        var data = {};
+        
+        var txt = $('#txtname');
+        var val = $.trim(txt.val());
+        if(val.length <= 0)
+        {
+            txt.next().text('请输入手机号！').css({'visibility':'visible'});
+            return false;
+        }
+        //if(val.length != 11)
+        //{
+        //    txt.next().text('手机号格式错误！').css({'visibility':'visible'});
+        //    return false;
+        //}
+        data.mobile = val;
+        
+        txt = $('#txtpwd');
+        val = $.trim(txt.val());
+        if(val.length <= 0)
+        {
+            txt.next().text('请输入密码！').css({'visibility':'visible'});
+            return false;
+        }
+        data.password = val;
+        
+        $.ajax(
+        {
+            url:'/user/login',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success:function(res)
+            {
+                if(res.code == '1')
+                {
+                    $.fn.cookie('uid', res.data.uid,{ expires : 7 });
+                    $.fn.cookie('token', res.data.token,{ expires : 7 });
+                    
+                    window.location.href = '/website/index';
+                }
+                else
+                {
+                    alert(res.message || '登录失败！');
+                }
+            }
+        });
+    });
+});
+</script>
+{/literal}
+{/block}
+</html>

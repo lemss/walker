@@ -1,0 +1,75 @@
+.hd
+{
+    font-size:0.3rem;
+    text-align:center;
+    padding:0.2rem;
+    margin-top:0.3rem;
+    color:rgba(211,211,211,0.7);
+}
+.hd span
+{
+    display:inline-block;
+    width:30%;
+}
+.hd span + span
+{
+    border-left:1px solid #8e8893;
+}
+.hd .hd_sel
+{
+    color:rgba(211,211,211,1);
+}
+.item
+{
+    position:absolute;
+    top:1.5rem;
+    width:96%;
+    padding:0.2rem 2%;
+    color:rgba(211,211,211,0.9);
+}
+.item>p
+{
+    font-size:0.3rem;
+    padding:0.2rem;
+    border-bottom:1px solid #8e8893;
+}
+.info
+{
+    font-size:0;
+    padding:0.2rem;
+}
+.info span
+{
+    font-size:0.3rem;
+    line-height:0.5rem;
+    display:inline-block;
+    min-width:50%;
+}
+.item div+div
+{
+    border-top:1px dashed #8e8893;
+}
+.pay
+{
+    left:-100%;
+    transition: left 0.5s;
+    -moz-transition: left 0.5s; /* Firefox 4 */
+    -webkit-transition:left  0.5s; /* Safari 和 Chrome */
+    -o-transition: left 0.5s; /* Opera */
+}
+.pay.item_show
+{
+    left:0;
+}
+.gain
+{
+    right:-100%;
+    transition: right 0.5s;
+    -moz-transition: right 0.5s; /* Firefox 4 */
+    -webkit-transition:right  0.5s; /* Safari 和 Chrome */
+    -o-transition: right 0.5s; /* Opera */
+}
+.gain.item_show
+{
+    right:0;
+}

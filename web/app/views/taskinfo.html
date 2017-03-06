@@ -1,0 +1,26 @@
+{extends file="include/layout.html"}
+{block name="title"}{$data.card_name} - {$sitename}{/block}
+{block name="css"}
+<link rel="stylesheet" href="/css/taskinfo.css">
+{/block}
+{block name="titlebar"}
+    {$data.card_name}
+{/block}
+{block name="body"}
+
+    <div class="item">
+        实际步数：{$data.actual_distance}步
+    </div>
+    <div class="item">
+        目标步数：{$data.distance}步
+    </div>
+    <div class="item">
+        时间：{$data.deadline|date_format:"%Y-%m-%d"}
+    </div>
+    {if ($data.task_status == '3' || $data.task_status == '4') && $data.card_reward_index > 0}
+    <div class="item">
+        第<b>{$data.card_reward_index}</b>个目标完成！
+    </div>
+    <a href="javascript:alert('不要着急哦，一切都会有的。');" class="btn2">分享</a>
+    {/if}
+{/block}

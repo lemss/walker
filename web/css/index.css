@@ -1,0 +1,43 @@
+.btn2
+{
+    display:block;
+    width: 2rem;
+    margin: 0.3rem auto;
+    padding: 0.2rem 0.3rem;
+    background-color:#24c789;
+    border-radius:0.1rem;
+    color:#fefefe;
+    font-size:0.3rem;
+    text-align:center;
+}
+.btn2 i
+{
+    display:block;
+}
+.item
+{
+    width:85%;
+    margin:0.3rem auto 0;
+    padding:0.2rem;
+    display:block;
+    font-size:0.3rem;
+    color:#d3d3d3;
+    text-align:center;
+    border:1px solid #8e8893;
+    background-color:#4d4654;
+    opacity:0.5;
+}
+.running
+{
+    opacity:1;
+    border-color:#24c789;
+}
+.running b
+{
+    color:#ff3300;
+    font-size:0.35rem;
+}
+.running .ok
+{
+    color:#24c789;
+}

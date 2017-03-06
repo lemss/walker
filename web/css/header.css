@@ -1,0 +1,91 @@
+.header
+{
+    height:0.8rem;
+    line-height:0.8rem;
+    /* background-color:#584f60; */
+    background-color:#fbfbfb;
+    font-size:0;
+    position:relative;
+    padding:0 0.8rem;
+}
+.title
+{
+    font-size:0.35rem;
+    display:inline-block;
+    width:100%;
+    text-align:center;
+    /* color:rgba(211,211,211,1); */
+    color:#584f60;
+}
+.back
+{
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+    width:0.8rem;
+    text-align:center;
+    font-size:0.4rem;
+}
+.back i
+{
+    /* color: rgba(211,211,211,0.8); */
+    color:#584f60;
+}
+.user
+{
+    position:absolute;
+    top:0;
+    right:0;
+    display:block;
+    width:0.8rem;
+    text-align:center;
+    font-size:0.4rem;
+}
+.user i
+{
+    /* color: rgba(211,211,211,0.5); */
+    color:rgba(58,79,60,0.8);
+}
+.sel i
+{
+  /*   color:rgba(211,211,211,1);
+    border-color:rgba(211,211,211,1); */
+    color:rgba(58,79,60,1);
+    border-color:rgba(58,79,60,1);
+}
+.nav
+{
+    position:absolute;
+    top:0.8rem;
+    left:-100%;
+    width:100%;
+    height:0;
+    overflow:hidden;
+    background-color:#4d4654;
+    z-index:2;
+    text-align:center;
+    transition: height 0.5s;
+    -moz-transition: height 0.5s; /* Firefox 4 */
+    -webkit-transition:height  0.5s; /* Safari ºÍ Chrome */
+    -o-transition: height 0.5s; /* Opera */
+}
+.nav a
+{
+    display:block;
+    line-height:1rem;
+    font-size:0.3rem;
+    color:rgba(211,211,211,1);
+    border-bottom: 1px solid #584f60;
+}
+.nav_show
+{
+    left:0;
+    height:4rem;
+}
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+.item
+{
+    width:80%;
+    margin:0.4rem auto 0;
+    padding:0.2rem;
+    display:block;
+    font-size:0.3rem;
+    color:#fefefe;
+    text-align:center;
+    border:1px solid #8e8893;
+    background-color:#4d4654;
+}
+.item b
+{
+    padding:0 0.1rem;
+    font-weight:normal;
+}
+.btn2
+{
+    display:block;
+    width: 2rem;
+    margin:0.4rem auto 0.3rem;
+    padding: 0.2rem 0.3rem;
+    background-color:#24c789;
+    border-radius:0.1rem;
+    color:#fefefe;
+    font-size:0.3rem;
+    text-align:center;
+}
+

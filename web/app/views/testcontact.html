@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>测试合同</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" href="http://img.youxinpai.com/b2c/gather/css/base.css" />
+<link rel="stylesheet" href="http://img.youxinpai.com/b2c/gather/css/page.css" />
+<script src="http://img.youxinpai.com/b2c/gather/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+
+<textarea id="a" rows="10"></textarea>
+<input type="button" value="确定" id="btn_sub">
+<script>
+    $("#btn_sub").click(function(){
+        $.post("../api/test_p",{ 't':$('#a').val() },function(r){
+            console.log(r);
+        });
+    });
+</script>
+</body>
+</html>

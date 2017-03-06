@@ -1,0 +1,168 @@
+.layer1
+{
+    opacity:0;
+    position:absolute;
+    background-color:red;
+    width:100%;
+    height:100%;
+    line-height:0.5rem;
+    top:0.8rem;
+    left:-100%;
+    background-color:#3d3744;
+    transition: left opacity 0.5s;
+    -moz-transition: left opacity 0.5s; /* Firefox 4 */
+    -webkit-transition: left opacity 0.5s; /* Safari 和 Chrome */
+    -o-transition: left opacity 0.5s; /* Opera */
+}
+.item
+{
+    width:80%;
+    margin:0.3rem auto 0;
+    padding:0.2rem;
+    display:block;
+    font-size:0.3rem;
+    color:#fefefe;
+    text-align:center;
+    border:1px solid #8e8893;
+    background-color:#4d4654;
+    opacity:0.8;
+}
+div.show
+{
+    opacity:1;
+    left:0;
+}
+.layer2
+{
+    opacity:0;
+    position:absolute;
+    background-color:red;
+    width:100%;
+    height:100%;
+    line-height:0.5rem;
+    top:1.2rem;
+    left:-100%;
+    background-color:#3d3744;
+    transition: left 0.5s;
+    -moz-transition: left 0.5s; /* Firefox 4 */
+    -webkit-transition: left opacity 0.5s; /* Safari 和 Chrome */
+    -o-transition: left 0.5s; /* Opera */
+}
+.layer2 p
+{
+    font-size:0.3rem;
+    color:#fefefe;
+    width:90%;
+    margin:0 auto;
+}
+.layer2 p span:first-child
+{
+    width:2rem;
+    text-align:right;
+    display:inline-block;
+}
+.layer2-col1 b
+{
+    color:#24c789;
+    font-weight:normal;
+}
+.layer2 .layer2-col4
+{
+    color:#999;
+    font-size:0.25rem;
+}
+.txt1
+{
+    display:inline-block;
+    width:3rem;
+    margin-right:0.1rem;
+    vertical-align:middle;
+    border:1px solid #f1f1f1;
+}
+.txt1 input
+{
+    background-color:transparent;
+    outline:none;
+    border:0;
+    text-indent:0.1rem;
+    width:80%;
+    color:#fefefe;
+}
+/* .layer2-col2 .txt1 input
+{
+    width:100%;
+    color:#fefefe;
+} */
+.layer2-col3 .txt1
+{
+    color:#b1b1b1;
+    border:1px solid #8e8893;
+}
+.layer2-col3 .txt1 input
+{
+    width:80%;
+    color:#b1b1b1;
+    line-height:0.5rem;
+}
+.btn2
+{
+    display:block;
+    width: 2rem;
+    margin: 0.3rem auto;
+    padding: 0.2rem 0.3rem;
+    background-color:#24c789;
+    border-radius:0.1rem;
+    color:#fefefe;
+    font-size:0.3rem;
+    text-align:center;
+}
+.layer3
+{
+    opacity:0;
+    position:absolute;
+    background-color:red;
+    width:100%;
+    height:100%;
+    line-height:0.5rem;
+    top:0.8rem;
+    left:-100%;
+    background-color:#3d3744;
+    transition: left 0.5s;
+    -moz-transition: left 0.5s; /* Firefox 4 */
+    -webkit-transition: left opacity 0.5s; /* Safari 和 Chrome */
+    -o-transition: left 0.5s; /* Opera */
+}
+.layer3 p
+{
+    margin-top:0.3rem;
+    font-size:0.3rem;
+    line-height:0.5rem;
+    color:#fefefe;
+    text-align:center;
+}
+
+.layer3 p b
+{
+    padding:0 0.1rem;
+    color:#ff3300;
+    font-weight:normal;
+}
+.error
+{
+    visibility:hidden;
+    display:block;
+    height:0.3rem;
+    line-height:0.3rem;
+    color:#ff3300;
+    font-size:0.3rem;
+    padding:0.1rem 0.2rem 0.1rem 2.1rem;
+    text-align:left;
+}
+
+
+
+
+
+
+
+

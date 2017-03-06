@@ -1,0 +1,40 @@
+html{
+    font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;
+    min-width:320px;
+    font-size: 50px;
+    -webkit-text-size-adjust: none;
+}
+@media screen and (device-width: 320px) and (-webkit-device-pixel-ratio: 2){
+    html {
+        font-size: 50px;
+    }
+}
+@media (device-width:375px) and (-webkit-min-device-pixel-ratio:2){
+    html {
+        font-size: 58.6px
+    }
+}
+@media (device-width:414px) and (-webkit-min-device-pixel-ratio:2.6){
+    html {
+        font-size: 64.7px;
+    }
+}
+@media (device-width:768px) and (-webkit-min-device-pixel-ratio:2){
+    html {
+        font-size: 78px;
+    }
+}
+@media (device-width:1024px) and (-webkit-min-device-pixel-ratio:2){
+    html {
+        font-size: 78px;
+    }
+}
+
+body
+{
+    background-color:#3d3744;
+}
+.userid
+{
+    display:none;
+}
